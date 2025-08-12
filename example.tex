@@ -15,6 +15,9 @@
 \usepackage{lmodern}
 \usepackage{import}
 \usepackage{xfakebold}
+\usepackage[most]{tcolorbox} % used to render the references block
+% bibtex does not like rendering inside of tikz drawings... so found a 
+% ~equivalent way to do the boxing
 %\usepackage{inconsolata}
 
 %%%% Uncomment the following commands to customise the format
@@ -61,9 +64,10 @@
 %\renewcommand{\maincolumnbackgroundcolor}{theory}
 %\renewcommand{\maincolumnbackgroundcolor}{methods}
 %\renewcommand{\maincolumnbackgroundcolor}{intervention}
+\renewcommand{\refname}{\fontsizetitle \textbf{References}}
 \renewcommand{\maincolumnbackgroundcolor}{uiucindustrial}
 \newcommand{\romani}[1]{\textcolor{altgeldorange}{\textbf{(#1)}}}
-\newcommand{\capt}[1]{\setstretch{1.0}\textcolor{gray}{\fontsizestandard #1}}
+\newcommand{\capt}[1]{\setstretch{1.0}\textcolor{gray}{\fontsizestandard\newline #1}}
 % Font of main column
 %\renewcommand{\maincolumnfontcolor}{gray}
 
@@ -93,7 +97,7 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 \iftrue
 \node (multiphysics) [main, xshift=-3cm] {
 \textcolor{black}{
-\\{\fontsizetitle Coupled Multiphysics of Advanced Reactors}\\
+\newline{\fontsizetitle Coupled Multiphysics of Advanced Reactors}\\
 \vspace{-25pt}\rule{\textwidth}{5pt}\\
 \fontsizesection
 \vspace{.5cm}
@@ -102,7 +106,7 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 };
 \node (fuelcycle) [main, right of = multiphysics, xshift = 17.65cm] {
 \textcolor{black}{
-\\{\fontsizetitle Nuclear Fuel Cycle Analysis}\\
+\newline{\fontsizetitle Nuclear Fuel Cycle Analysis}\\
 \vspace{-20pt}\rule{\textwidth}{5pt}\\
 \fontsizesection
 \vspace{1.5cm}
@@ -112,7 +116,7 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 };
 \node (compute) [main, right of = fuelcycle, xshift = 17.65cm] {
 \textcolor{black}{
-\\{\fontsizetitle Advanced Computation}\\
+\newline{\fontsizetitle Advanced Computation}\\
 \vspace{-25pt}\rule{\textwidth}{5pt}\\
 \fontsizesection
 \vspace{17pt}
@@ -129,7 +133,7 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 \fi
 \node (logos) [blurb, yshift = -19cm, xshift = -3cm] {\vspace{5pt}
 \textcolor{black}{
-\\{\fontsizetitle Open-Source Nuclear Research Codes}\\
+\newline{\fontsizetitle Open-Source Nuclear Research Codes}\\
 \vspace{-20pt}\rule{\textwidth}{5pt}\\
 \vspace{25pt}
 \begin{minipage}{.2\linewidth}
@@ -176,7 +180,7 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
         \begin{minipage}{.3\linewidth}
             % top left https://en.m.wikipedia.org/wiki/File:US-NuclearRegulatoryCommission-Logo.svg
             \includegraphics[width = \linewidth]{img/nrc.png}
-        \end{minipage}\\
+        \end{minipage}
         \vspace{1cm}
         \begin{minipage}{.3\linewidth}
         `   %https://www.moltexenergy.com/partners/ornl-logo/
@@ -196,24 +200,12 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 \end{minipage}
 
 \vspace{2cm}
-\begin{minipage}{\textwidth}
-    
-    \begin{tikzpicture}
-    \node (refs) [blurb] {\textcolor{black}{\fontsizetitle
-    \vspace{-50pt}\\{References}\\\vspace{-75pt}\\
-    \rule{\textwidth}{5pt}\\
-    \fontsizerefs
-    \begin{itemize}[leftmargin = 4cm, rightmargin = 5cm]
-        \item[[1\hspace{-4pt}]]\quad S. M. Park, “Advancements in Moltres for Time-Dependent Multiphysics Molten Salt Reactor Modeling,” Doctoral Dissertation, University of Illinois Urbana-Champaign, Urbana, 2025.\\
-        \item[[2\hspace{-4pt}]] \quad A. M. Bachmann, “Investigation of the impacts of deploying reactors fueled by high-assay low enriched uranium,” Doctoral Dissertation, University of Illinois at Urbana-Champaign, 2023.\\
-        \item[[3\hspace{-4pt}]] \quad G. J. Y. Chee, “Fluoride-Salt-Cooled High Temperature Reactor Design Optimization with Evolutionary Algorithms,” Doctoral Dissertation, University of Illinois at Urbana-Champaign, Urbana, 2022.\\
-        \item[[4\hspace{-4pt}]]\quad Z. Richter, E. Davidson, S. Skutnik, and M. Munk, “MODELING AND SIMULATION OF AN XE-100 TYPE PEBBLE BED GAS-COOLED REACTOR WITH SCALE,” Technical Report ORNL/TM-2023/2959, 2023.\\
-    \end{itemize}
-    }
-    };
-\end{tikzpicture}
-\end{minipage}
-
+\begin{center}
+    \begin{tcolorbox}[colback=white, colframe=black, width=0.9\textwidth, arc=6pt, boxrule=1pt]
+        \bibliographystyle{plain}
+        \bibliography{group-poster}
+    \end{tcolorbox}
+\end{center}
 }{
 }
 
@@ -222,10 +214,10 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 \vspace{-2.5cm}
 \begin{tikzpicture}
     \node (park) [blurb] {
-    \\{\fontsizetitle Moltres}\\
+    \newline{\fontsizetitle Moltres}\\
     \vspace{-20pt}\rule{\textwidth}{5pt}\\
     \fontsizesection
-    S$_N$-D method for accurate time-dependent control rod modeling in Moltres, an open-source MOOSE application for the simulation of molten salt reactors [1]\iffalse\cite{park}\fi.\\
+    S$_N$-D method for accurate time-dependent control rod modeling in Moltres, an open-source MOOSE application for the simulation of molten salt reactors\cite{park}.\\
     \begin{center}
         \includegraphics[width = .4\textwidth]{img/msre-full-0-power.png}
         \hspace{2cm}
@@ -236,10 +228,10 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 
     };
     \node (bachmann) [blurb, below of = park, yshift=-19.25cm] {
-    \\{\fontsizetitle OpenMCyclus}\\
+    \newline{\fontsizetitle OpenMCyclus}\\
     \vspace{-20pt}\rule{\textwidth}{5pt}\\
     \fontsizesection
-    Reactor-physics informed fuel cycle analysis on the impacts of deploying HALEU-fueled reactors using OpenMCyclus, a coupling of OpenMC with Cyclus [2]\iffalse\cite{bachmann}\fi.\\
+    Reactor-physics informed fuel cycle analysis on the impacts of deploying HALEU-fueled reactors using OpenMCyclus, a coupling of OpenMC with Cyclus\cite{bachmann}.\\
     \begin{center}
     \begin{minipage}{.45\textwidth}
     \vspace{1cm}
@@ -259,10 +251,10 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
     \end{center}
     };
     \node (chee) [blurb, below of = bachmann, yshift = -20.75cm] {
-    \\{\fontsizetitle ROLLO}\\
+    \newline{\fontsizetitle ROLLO}\\
     \vspace{-20pt}\rule{\textwidth}{5pt}\\
     \fontsizesection
-    Evolutionary algorithm techniques applied to optimize nuclear reactor design by coupling nuclear software to the DEAP evolutionary algorithm driver [3] \iffalse\cite{chee}\fi.
+    Evolutionary algorithm techniques applied to optimize nuclear reactor design by coupling nuclear software to the DEAP evolutionary algorithm driver \cite{chee}.
     \begin{center}
     \includegraphics[width = .7\textwidth]{img/assem-obj-3-2d.png}
     \\
@@ -280,14 +272,14 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
 \includegraphics[height=0.28\textwidth, trim={0 .5cm 0 .5cm}]{img/arfc_atom.png}
 
 \end{center}
-
-}{
+}
+{
 \vspace{-2.5cm}
 \begin{tikzpicture}
     \node (physics) [blurb] {
     \vspace{5pt}
     \textcolor{black}{
-    \\{\fontsizetitle Physics of Advanced Reactors}\\
+    \newline{\fontsizetitle Physics of Advanced Reactors}\\
     \vspace{-20pt}\rule{\textwidth}{5pt}\\
     \fontsizesection
     Variance reduction methods for time-dependent Monte Carlo neutron transport. \\
@@ -306,9 +298,10 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
         \hspace{.5cm}
         \begin{minipage}{.2\linewidth}
             \includegraphics[height = 3\textwidth]{img/ghastly3.png}
-        \end{minipage}\\\vspace{10pt}
+        \end{minipage}
+        \vspace{10pt}
         \capt{Simulation of a generic pebble bed HTGR core being filled (left) and online pebble recirculation (middle) using LAMMPS, 
-        and a Xe-100-like full-core pebble bed HTGR (right) using SCALE [4].}\iffalse{\fontsizestandard\cite{richter}.}\fi
+        and a Xe-100-like full-core pebble bed HTGR (right) using SCALE \cite{richter}.}
         \end{center}
     }
     };
@@ -316,7 +309,7 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
     \node (cycles) [blurb, below of = physics, yshift = -35.70cm] {
     \vspace{5pt}
     \textcolor{black}{
-    \\{\fontsizetitle Fuel Cycle and Energy System Optimization}\\
+    \newline{\fontsizetitle Fuel Cycle and Energy System Optimization}\\
     \vspace{-20pt}\rule{\textwidth}{5pt}\\
     \fontsizesection
     Modeling and simulating scaled isotopic consequences of deploying Accelerators Driven Systems.\\
@@ -325,17 +318,17 @@ PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdh
         \begin{center}
         \begin{minipage}{.7\textwidth}
             \includegraphics[width = \textwidth]{img/osier.png}
-        \end{minipage}\\
-        \vspace{10pt}\\
+        \end{minipage}
+        \vspace{10pt}
         \capt{The design space for a four objective problem including alternative solutions suggested by MGA.}
-        \end{center}\\
+        \end{center}
         \vspace{20pt}
     Fuel cycle transition scenarios for advanced reactors.
         \begin{center}
         \begin{minipage}{.6\textwidth}
             \includegraphics[width = \textwidth]{img/multi_dg2_reactors.pdf}
-        \end{minipage}\\
-        \vspace{10pt}\\
+        \end{minipage}
+        \vspace{10pt}
         \capt{Greedy AP1000 deployment along with Xe-100s and MMRs fueled by LEU+ and HALEU fuel.}
         \end{center}
     }
