@@ -8,7 +8,7 @@
     PI: {\textbf{Prof. Katy Huff}}, \href{mailto:kdhuff@illinois.edu}{\underline{kdhuff}@\underline{illinois.edu}}
     \newline\vspace{-3em}
     \rule{\textwidth}{5pt}
-    \newline\vspace{-1em}
+    \newline\vspace{-1.5em}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%
     %%%% Research Areas %%%%%
@@ -43,6 +43,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%
     %%%% Logos of codes %%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%
+    \vspace{-0.5em}
     \begin{tcolorbox}[colback=white, colframe=black, width=.9\linewidth, height=.25\linewidth, boxrule=1pt]
         \codelogoheader{Open-Source Nuclear Research Codes}
         \sectioncontent{
@@ -66,6 +67,7 @@
         }
     \end{tcolorbox}
 
+    \vspace{-0.5em}
     %%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%% QR code %%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,9 +117,16 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%% References %%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%
+    \vspace{-0.5em}
     \begin{tcolorbox}[colback=white, colframe=black, width=0.9\textwidth, arc=6pt, boxrule=1pt]
-        \bibliographystyle{plain}
-        \bibliography{group-poster}
+        \referencestitle{References} % or your preferred title formatting
+        \setlength{\columnsep}{0.5em}
+        \begin{multicols}{2}
+            \fontsizerefs
+            \renewcommand{\section}[2]{} % Suppress the automatic section title
+            \bibliographystyle{plain}
+            \bibliography{group-poster}
+        \end{multicols}
     \end{tcolorbox}
 \end{center}
 }{

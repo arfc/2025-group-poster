@@ -9,6 +9,7 @@
 \documentclass[poster, fleqn]{betterposter}
 \usepackage[colorlinks=true, urlcolor=white, citecolor=black]{hyperref}
 \usepackage{setspace}
+\usepackage{multicol}
 \usepackage{pgf}
 \usepackage[most]{tcolorbox} %% colored boxes
 
@@ -33,9 +34,6 @@
     % Vertical margin for the main column
     \setlength{\maincolumnmarginhorizontal}{0.02\paperheight}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%% Bibtex references section header
-\renewcommand{\refname}{\fontsizetitle \textbf{References}}
 
 %% Background color for the main column
 \renewcommand{\maincolumnbackgroundcolor}{uiucindustrial}
@@ -95,6 +93,16 @@
         \newline
         \vspace{-1.5em}
     }
+}
+
+\newcommand{\referencestitle}[1]
+{
+    \centering\vspace{0.25em}
+    {\fontsizetitle \textbf{#1}}
+    \par\vspace{-1.5em}
+    \rule{\textwidth}{5pt}
+    \newline
+    \vspace{-3.25em}
 }
 
 \begin{document}
