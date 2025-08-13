@@ -29,10 +29,10 @@
     \setlength{\columnmarginhorizontal}{0.02\paperheight}
 
     % Horizontal margin for the main column
-    \setlength{\maincolumnmarginvertical}{0.05\paperheight}
+    \setlength{\maincolumnmarginvertical}{0.02\paperheight}
 
     % Vertical margin for the main column
-    \setlength{\maincolumnmarginhorizontal}{0.05\paperheight}
+    \setlength{\maincolumnmarginhorizontal}{0.02\paperheight}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Bibtex references section header
@@ -67,6 +67,18 @@
         \fontsizesection
         #1
     \end{center}
+}
+
+%% Shorthand for research area titles, slightly different from section titles
+\newcommand{\researcharea}[1]
+{
+    \singlespacing 
+    \vspace{0.5em}
+    \centering
+    {\fontsizetitle \textbf{#1}}
+    \par\vspace{1em}
+    \rule{\textwidth}{5pt}
+    \newline
 }
 
 \tikzstyle{blurb} = [rectangle, rounded corners, text centered, draw=black, text width = .99\textwidth, anchor = west, fill = white]
