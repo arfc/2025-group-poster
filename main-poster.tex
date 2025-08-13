@@ -81,6 +81,22 @@
     \newline
 }
 
+%% Shorthand for code logo header block, for whatever reason this was way more 
+%% complicated than the other headers...
+\newcommand{\codelogoheader}[1]
+{
+    \textcolor{black}{
+        \newline
+        \vspace{-3em}
+        \begin{center}
+            {\fontsizetitle \textbf{#1}}
+        \end{center}
+        \vspace{-1.5em}
+        \rule{\textwidth}{5pt}
+        \newline
+        \vspace{-1.5em}
+    }
+}
 \tikzstyle{blurb} = [rectangle, rounded corners, text centered, draw=black, text width = .99\textwidth, anchor = west, fill = white]
 
 \tikzstyle{main} = [rectangle, rounded corners, text centered, 
