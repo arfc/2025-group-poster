@@ -1,4 +1,4 @@
-manuscript = example
+manuscript = main-poster
 references = $(wildcard *.bib)
 latexopt   = -halt-on-error -file-line-error
 
@@ -28,7 +28,7 @@ fc-diagram.pdf :
 	dvipdf fc-diagram
 
 clean:
-	rm -f *.nav *.synctex.gz *.snm *.fls *.fdb_latexmk *.pdf *.dvi *.toc *.aux *.out *.log *.bbl *.blg *.log *.spl *~ *.spl *.zip *.acn *.glo *.ist *.epub
+	rm -f *.nav *.synctex.gz *.snm *.fls *.fdb_latexmk $(manuscript).pdf *.dvi *.toc *.aux *.out *.log *.bbl *.blg *.log *.spl *~ *.spl *.zip *.acn *.glo *.ist *.epub
 
 realclean: clean
 	rm -rf $(manuscript).dvi
