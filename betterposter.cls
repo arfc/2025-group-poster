@@ -101,7 +101,6 @@
 \renewcommand{\fontsizetitle}{\fontsize{50.00}{100.00} \selectfont}
 \renewcommand{\fontsizeauthor}{\fontsize{39.00}{34.00} \selectfont}
 \renewcommand{\fontsizesection}{\fontsize{30.00}{40.00} \selectfont}
-\renewcommand{\fontsizereftitle}{\fontsize{40.00}{60.00} \selectfont}
 }
 
 
